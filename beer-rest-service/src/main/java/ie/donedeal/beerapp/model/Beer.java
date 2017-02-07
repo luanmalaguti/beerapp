@@ -1,6 +1,6 @@
 package ie.donedeal.beerapp.model;
 /**
- * Representation of a Beer
+ * Representation of a model of Beer
  * 
  * @author Luan Reffatti
  */

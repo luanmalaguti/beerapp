@@ -1,0 +1,18 @@
+{"beers":[{
+		"id": 0,
+		"name": "Estrella",
+		"description": "Estrella Damm is a Mediterranean beer, made with malt, rice and hop, brewed with 100% natural ingredients according to the original recipe from 1876.",
+		"abv": 4.6,
+		"breweryLocation": "Barcelona",
+		"img": "estrella.png"
+	},
+	{
+		"id": 1,
+		"name": "Guiness",
+		"description": "Irish Dry Stout style beer brewed by Guinness Ltd. in Dublin, Ireland",
+		"abv": 4.8,
+		"breweryLocation": "Dublin",
+		"img": "guiness.png"
+	}
+	]
+}

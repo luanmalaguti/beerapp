@@ -1,5 +1,9 @@
 package ie.donedeal.beerapp.util;
-
+/**
+ * Throwable that specifics the behavior of an BeerException
+ * 
+ * @author Luan Reffatti
+ */
 public class BeerException extends Exception{
 
 	private static final long serialVersionUID = -909781563043677610L;

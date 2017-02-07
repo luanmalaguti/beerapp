@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 import ie.donedeal.beerapp.controller.builders.BeerBuilder;
 import ie.donedeal.beerapp.model.Beer;
 import ie.donedeal.beerapp.util.BeerException;
-
+/**
+ * Controller that handle the web requests 
+ * 
+ * @author Luan Reffatti
+ */
 @RestController
 @RequestMapping(value="/beers")
 public class BeerController {
@@ -21,11 +25,11 @@ public class BeerController {
 	@RequestMapping(value="/randombeer", method=RequestMethod.GET)
     public Beer getRandomBeer() throws BeerException {
     	try {
-    		BeerBuilder beerBuilder = new BeerBuilder();
-    		return beerBuilder.createBeer();
+    		return BeerBuilder.createRandomBeer();
 		} catch (Exception e) {
 			log.error("Error: ",e);
-			throw new BeerException("An error occurred while processing your request. Check if the server is running on port 8080!");
+			throw new BeerException("An error occurred while processing your request. "
+					+ "Check if the server is running on port 8080!");
 		}
     }
 }
