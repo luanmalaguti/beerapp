@@ -3,3 +3,7 @@
 /*.classpath/
 /settings/
 /.mvn/
+/bin/
+/.classpath
+/.project
+/.settings/
