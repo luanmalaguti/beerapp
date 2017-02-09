@@ -3,32 +3,28 @@
   <strong>Warning!</strong> {{errorMessage}}
 </div>
 
-<div class="jumbotron">
+<div class="jumbotron" >
 	<div class="header">
 		<h1 class="box">The Random Beer App!</h1>
-		<a class="btn btn-primary btn-lg box" ng-click="randomBeer()"
-			role="button">Show Another Beer</a>
-	</div>
-</div>
-
-<div class="content">
-	<div class="panel panel-default box" >
-		<img class="img-responsive" data-ng-src="data:image/png;base64,{{beer.img}}" height="100%" width="50%;"/>
-	</div>
-	<div class="panel panel-default box" style="height: 100% ;width: 49%">
-		<div class="panel-heading">
-			<h3 class="panel-title">{{beer.name}}</h3>
-		</div>
-		<div class="panel-body">
-			<h3 class="panel-title">{{beer.description}}</h3>
-			<h3 class="panel-title">ABV: {{beer.abv}}</h3>
-			<h3 class="panel-title">Brewery Location: {{beer.breweryLocation}}</h3>
+		<div class="box btn-show-beer">
+			<a class="btn btn-primary btn-lg " ng-click="randomBeer()"
+				role="button">Show Another Beer</a>
 		</div>
 	</div>
 </div>
 
-<div class="well well-sm footer">
-	<div">
-		@2017 by Luan malaguti Reffatti <a>luanmalaguti@gmail.com<a>
-	</div>
+<div class="content well well-lg">
+		<div style="float: left;">
+			<img class="img-responsive imglogo" data-ng-src="data:image/png;base64,{{beer.img}}" height="100%" width="50%;"/>
+		</div>
+		<div>
+			<div>
+				<h1>{{beer.name}}</h1>
+			</div>
+			<div >
+				<p>{{beer.description}}</p>
+				<p><b>ABV:</b> {{beer.abv}}%</p>
+				<p><b>Brewery Location:</b> {{beer.breweryLocation}}</p>
+			</div>
+		</div>
 </div>
