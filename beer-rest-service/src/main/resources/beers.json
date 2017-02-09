@@ -3,7 +3,7 @@
 		"name": "Estrella",
 		"description": "Estrella Damm is a Mediterranean beer, made with malt, rice and hop, brewed with 100% natural ingredients according to the original recipe from 1876.",
 		"abv": 4.6,
-		"breweryLocation": "Barcelona",
+		"breweryLocation": "Barcelona, Spain",
 		"img": "estrella.png"
 	},
 	{
@@ -11,7 +11,7 @@
 		"name": "Guinness",
 		"description": "Irish Dry Stout style beer brewed by Guinness Ltd. in Dublin, Ireland. Guinness stout is made from water, barley, roast malt extract, hops, and brewer's yeast.",
 		"abv": 4.8,
-		"breweryLocation": "Dublin",
+		"breweryLocation": "Dublin, Ireland",
 		"img": "guiness.png"
 	},
 	{
@@ -19,8 +19,24 @@
 		"name": "Galway Hooker",
 		"description": "Galway Hooker is an excellent example of a Pale Ale; very complex and well balanced, fully flavoured with a great finish making it a highly refreshing and more-ish beer",
 		"abv": 4.3,
-		"breweryLocation": "Oranmore",
+		"breweryLocation": "Oranmore, Ireland",
 		"img": "galway_hooker.png"
+	},
+	{
+		"id": 3,
+		"name": "Paulaner Hefe-Weissbier",
+		"description": "The distinctive fruity, cloves and spice aroma and flavour of Paulaner Hefe-Weissbier are derived from the use of 60% malted wheat, a speciality cultured yeast and traditional Hallertau valley hops. An excellent Bavarian wheat beer that is naturally cloudy, with yeasty aromas and a refreshing taste.",
+		"abv": 5.5,
+		"breweryLocation": "Munich, Bavaria, Germany",
+		"img": "paulaner.png"
+	},
+	{
+		"id": 4,
+		"name": "London Pride",
+		"description": "Brewed under the watchful eye of our Griffin since the 1950s, London Pride is unmistakably London's beer. With its well-rounded flavour and rich history, everything about this authentic, characterful beer binds it to our capital city and the people who love it.",
+		"abv": 4.7,
+		"breweryLocation": "Munich, Bavaria, Germany",
+		"img": "london-pride.png"
 	}
 	
 	]

@@ -27,31 +27,38 @@ public class BeerBuilder {
 
 	private static final String JSON_FILE = "/beers.json";
 
+	/**
+	 * Extract the beers data from the json file and convert to a list of beers 
+	 * 
+	 * @throws BeerException
+	 */
 	public static Beer createRandomBeer() throws BeerException {
-		try {
-			ObjectMapper mapper = new ObjectMapper();
-			String jsonUrl = BeerBuilder.class.getClass().getResource(JSON_FILE).getFile();
-			File beersFile = new File(jsonUrl);
-			BeerWrapper beerWrapper = mapper.readValue(beersFile, BeerWrapper.class);
+			List<Beer> list = extractDataFromJsonFile();
 			
-			List<Beer> list = beerWrapper.getBeers();
-
+			//reset the index if there are no more new beeers to show
 			if (id.get() > (list.size() - 1))
 				id.set(0);
 
 			Beer beer = list.get(id.getAndIncrement());
 			beer.setImg(loadImageBase64(beer.getImg()));
 			return beer;
-		} catch (Exception e) {
-			log.error("Error: ",e);
-			throw new BeerException(e);
-		}
-	}
-	
-	public static void main(String[] args) throws BeerException {
-		BeerBuilder.createRandomBeer();
 	}
 
+	private static List<Beer> extractDataFromJsonFile() throws BeerException{
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			String jsonUrl = BeerBuilder.class.getClass().getResource(JSON_FILE).getFile();
+			File beersFile = new File(jsonUrl);
+			BeerWrapper beerWrapper = mapper.readValue(beersFile, BeerWrapper.class);
+			List<Beer> list = beerWrapper.getBeers();
+			return list;
+		} catch (IOException e) {
+			log.error("Erros: ",e);
+			throw new BeerException(e);
+		}
+		
+	}
+	
 	private static String loadImageBase64(String path) throws BeerException {
 		InputStream stream = BeerBuilder.class.getResourceAsStream("/" + path);
 		try {
@@ -59,7 +66,7 @@ public class BeerBuilder {
 			return base64;
 		} catch (IOException e) {
 			log.error("Error: ", e);
-			throw new BeerException(e);
+			return "";
 		}
 	}
 }
