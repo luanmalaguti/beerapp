@@ -25,7 +25,8 @@ Spring Boot-based project who provides REST services to be consumed by the clien
 
 * Requirements
   - Java 8
-
+  
+There are two option how to run:
 ```console
 $ git clone https://github.com/luanmalaguti/beerapp.git
 $ cd beer-rest-server
