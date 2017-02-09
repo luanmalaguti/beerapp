@@ -29,7 +29,7 @@ public class BeerController {
 		} catch (Exception e) {
 			log.error("Error: ",e);
 			throw new BeerException("An error occurred while processing your request. "
-					+ "Check if the server is running on port 8080!");
+					+ "Check if the server is running!");
 		}
     }
 }

@@ -1,6 +1,6 @@
 package ie.donedeal.beerapp.util;
 /**
- * Throwable that specifics the behavior of an BeerException
+ * Throwable that imlements the behavior of an BeerException
  * 
  * @author Luan Reffatti
  */

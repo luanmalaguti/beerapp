@@ -21,7 +21,11 @@ angular.module('myApp.view', [ 'ngRoute' ])
 			$scope.displayBeer(response.data)
 		}, function errorCallback(response) {
 			console.log(response);
-			$scope.errorMessage = response.data.message;
+			if($scope.errorMessage){
+				$scope.errorMessage = response.data.message;
+				return;
+			}
+			$scope.errorMessage = "Unable to request calls, Check if the server is running!"
 		});
 		
 		$scope.displayBeer = function (beer) {
