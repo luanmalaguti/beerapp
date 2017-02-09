@@ -31,10 +31,10 @@ There are two option how to run:
 $ git clone https://github.com/luanmalaguti/beerapp.git
 $ cd beer-rest-server
 
-# Executable JAR
+# 1. Executable JAR
 $ java -jar beer-rest-service-1.0.0.jar
 
-# Run the source as Java project
+# 2. Run the source as Java project
 $ eclipse > file > Import Existing Maven Projects > beer-rest-service
 $ ie.donedeal.beerapp.app.BeerApp.java > Run as Java Application
 ```
