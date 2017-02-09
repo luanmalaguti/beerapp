@@ -9,6 +9,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -25,13 +28,8 @@ public class BeerBuilder {
 	static Logger log = Logger.getLogger(BeerBuilder.class);
 	private static AtomicInteger id = new AtomicInteger(0);
 
-	private static final String JSON_FILE = "/beers.json";
-
-	/**
-	 * Extract the beers data from the json file and convert to a list of beers 
-	 * 
-	 * @throws BeerException
-	 */
+	private static final String JSON_FILE = "beers.json";
+	
 	public static Beer createRandomBeer() throws BeerException {
 			List<Beer> list = extractDataFromJsonFile();
 			
@@ -40,32 +38,43 @@ public class BeerBuilder {
 				id.set(0);
 
 			Beer beer = list.get(id.getAndIncrement());
-			beer.setImg(loadImageBase64(beer.getImg()));
+			beer.setImg(loadImageAsBase64(beer.getImg()));
 			return beer;
 	}
-
+	/**
+	 * Extract the beers data from the json file and convert to a list of beers 
+	 *
+	 * @return {@link List} of {@link Beer} 
+	 * @throws BeerException
+	 */
 	private static List<Beer> extractDataFromJsonFile() throws BeerException{
 		try {
 			ObjectMapper mapper = new ObjectMapper();
-			String jsonUrl = BeerBuilder.class.getClass().getResource(JSON_FILE).getFile();
-			File beersFile = new File(jsonUrl);
-			BeerWrapper beerWrapper = mapper.readValue(beersFile, BeerWrapper.class);
+			ClassPathResource resource = new ClassPathResource(JSON_FILE);
+			InputStream stream = resource.getInputStream();
+			BeerWrapper beerWrapper = mapper.readValue(stream, BeerWrapper.class);
 			List<Beer> list = beerWrapper.getBeers();
 			return list;
 		} catch (IOException e) {
-			log.error("Erros: ",e);
+			log.error("An error occurred when tried to load data from json",e);
 			throw new BeerException(e);
 		}
 		
 	}
 	
-	private static String loadImageBase64(String path) throws BeerException {
-		InputStream stream = BeerBuilder.class.getResourceAsStream("/" + path);
+	/**
+	 * Load image from classpath and conver to base64 format
+	 * 
+	 * @return image in base64 format
+	 * @throws BeerException
+	 */
+	private static String loadImageAsBase64(String path) throws BeerException {
 		try {
+			InputStream stream = new ClassPathResource(path).getInputStream();
 			String base64 = Base64.getEncoder().encodeToString(IOUtils.toByteArray(stream));
 			return base64;
 		} catch (IOException e) {
-			log.error("Error: ", e);
+			log.error("An error has ocurred when tried to load image and convert to base64 format: ", e);
 			return "";
 		}
 	}
