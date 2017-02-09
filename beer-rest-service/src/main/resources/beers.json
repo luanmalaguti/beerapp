@@ -8,11 +8,20 @@
 	},
 	{
 		"id": 1,
-		"name": "Guiness",
-		"description": "Irish Dry Stout style beer brewed by Guinness Ltd. in Dublin, Ireland",
+		"name": "Guinness",
+		"description": "Irish Dry Stout style beer brewed by Guinness Ltd. in Dublin, Ireland. Guinness stout is made from water, barley, roast malt extract, hops, and brewer's yeast.",
 		"abv": 4.8,
 		"breweryLocation": "Dublin",
 		"img": "guiness.png"
+	},
+	{
+		"id": 2,
+		"name": "Galway Hooker",
+		"description": "Galway Hooker is an excellent example of a Pale Ale; very complex and well balanced, fully flavoured with a great finish making it a highly refreshing and more-ish beer",
+		"abv": 4.3,
+		"breweryLocation": "Oranmore",
+		"img": "galway_hooker.png"
 	}
+	
 	]
 }
