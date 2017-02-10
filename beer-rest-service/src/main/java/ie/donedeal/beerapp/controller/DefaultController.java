@@ -10,7 +10,7 @@ import ie.donedeal.beerapp.util.BeerException;
 public class DefaultController {
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
-    public String getRandomBeer() throws BeerException {
+    public String defaultContext() throws BeerException {
 		return "Beer App :)";
 	}
 }
