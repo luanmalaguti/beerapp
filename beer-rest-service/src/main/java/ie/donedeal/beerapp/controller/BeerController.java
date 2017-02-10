@@ -28,8 +28,7 @@ public class BeerController {
     		return BeerBuilder.createRandomBeer();
 		} catch (Exception e) {
 			log.error("Error: ",e);
-			throw new BeerException("An error occurred while processing your request. "
-					+ "Check if the server is running!");
+			throw new BeerException("An error occurred while processing your request: "+e.getMessage());
 		}
     }
 }
