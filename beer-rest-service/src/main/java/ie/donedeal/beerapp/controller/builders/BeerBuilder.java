@@ -22,7 +22,7 @@ import ie.donedeal.beerapp.util.BeerException;
  * @author Luan Reffatti
  */
 public class BeerBuilder {
-	static Logger log = Logger.getLogger(BeerBuilder.class);
+	private static Logger log = Logger.getLogger(BeerBuilder.class);
 	private static AtomicInteger id = new AtomicInteger(0);
 
 	private static final String JSON_FILE = "beers.json";
