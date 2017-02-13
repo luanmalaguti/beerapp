@@ -25,6 +25,7 @@ Spring Boot-based project who provides REST services to be consumed by the clien
 
 * Requirements
   - Java 8
+  - Maven
   
 There are two option how to run:
 ```console
